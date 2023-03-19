@@ -13,14 +13,14 @@ resource "aws_kms_key" "s3_bucket_key" {
     {
       "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
-      "Principal": {"AWS": "arn:aws:iam::989301192042:root"},
+      "Principal": "*",
       "Action": "kms:*",
       "Resource": "*"
     },
     {
       "Sid": "Allow administration of the key",
       "Effect": "Allow",
-      "Principal": {"AWS": "arn:aws:iam::989301192042:user/Kingsley"},
+      "Principal": {"AWS": "arn:aws:iam::989301192042:root"},
       "Action": [
         "kms:Create*",
         "kms:Describe*",
